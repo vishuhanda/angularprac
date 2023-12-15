@@ -11,31 +11,27 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-7 mx-auto">
-        <div class="card mb-4">
+
+        <div class="card mb-4" *ngFor="let company of companies; let index = index">
           <div class="card-body">
             <div class="row">
               <div class="col-md-2">
-                <img src="../../assets/instahyre/b80dc7cb49090a00550b059784f40992.webp"
+                <img src="assets/instahyre/b80dc7cb49090a00550b059784f40992.webp"
                   style="width: 70px;height: 70px;" alt="">
               </div>
-              <div class="col-md-8">
-                <h5 class="card-title text-left">Bazzi Games - QA Engineer - Automation</h5>
+              <div class="col-md-8" style="border-right: 2px solid gray;">
+                <h5 class="card-title text-left">{{company.companynamewithposition}}</h5>
                 <i class="bi bi-geo-alt d-inline-block app-img-geo-icon"></i>
-                <p class="card-text d-inline-block mx-2">Job available in Delhi</p>
+                <p class="card-text d-inline-block mx-2">{{company.jobavailablelocation}}</p>
                 <div>
                   <i class="bi bi-person-lines-fill d-inline-block app-img-geo-icon"></i>
-                  <p class="d-inline-block mx-2">Founded in 2014 . 200 - 500 employees</p>
+                  <p class="d-inline-block mx-2">{{company.Foundedyear}}{{company.employeestrength}}</p>
                 </div>
                 <div>
-                  <p>Baazi Games is a group of companies operational in a variety of online games such as fantasy
-                    cricket, poker games, card games, rummy... </p>
+                  <p>{{company.companyinfo}}</p>
                 </div>
                 <div>
-                  <span class="badge bg-secondary mx-1">Cucumber</span>
-                  <span class="badge bg-secondary mx-1">Java</span>
-                  <span class="badge bg-secondary mx-1">Playwright</span>
-                  <span class="badge bg-secondary mx-1">Angular</span>
-                  <span class="badge bg-secondary mx-1">Python</span>
+                  <span class="badge bg-secondary mx-1" *ngFor="let skill of company.requiredskills">{{skill}}</span>
                 </div>
               </div>
               <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
@@ -47,7 +43,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 

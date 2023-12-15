@@ -23,7 +23,7 @@ import { SettingspageComponent } from './settingspage/settingspage.component';
     FooterpageComponent,
     ProfilepageComponent,
     InboxpageComponent,
-    SettingspageComponent
+    SettingspageComponent,
   ],
   imports: [
     BrowserModule,
