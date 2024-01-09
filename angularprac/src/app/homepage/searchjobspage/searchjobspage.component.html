@@ -7,12 +7,26 @@
 
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button *ngFor="let tab of tabs" class="nav-link" id="{{tab.tab_name}}-tab" data-bs-toggle="tab"
-          attr.data-bs-target="#nav-{{tab.tab_name}}" type="button" role="tab" attr.aria-controls="nav-{{tab.tab_name}}" aria-selected="true">{{tab.tab_title}}</button>
+          <button (click)="openNewTab($event)"
+                  *ngFor="let tab of tabs"
+                  class="nav-link" id="{{tab.tab_name}}-tab"
+                  data-bs-toggle="tab"
+                  attr.data-bs-target="#nav-{{tab.tab_name}}"
+                  type="button"
+                  role="tab"
+                  attr.aria-controls="nav-{{tab.tab_name}}"
+                  aria-selected="true">{{tab.tab_title}}
+          </button>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div *ngFor="let tab of tabs" class="tab-pane fade show" id="nav-{{tab.tab_name}}" role="tabpanel" attr.aria-labelledby="nav-{{tab.tab_name}}-tab" tabindex="0">{{tab.tab_title}}</div>
+        <div *ngFor="let tab of tabs"
+             class="tab-pane fade show"
+             id="nav-{{tab.tab_name}}"
+              role="tabpanel"
+              attr.aria-labelledby="nav-{{tab.tab_name}}-tab"
+              tabindex="0" >{{tab.tab_title}}
+            </div>
       </div>
 
 

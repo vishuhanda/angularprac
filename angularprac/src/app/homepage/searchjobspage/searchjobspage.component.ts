@@ -9,20 +9,19 @@ import { tab } from './tab';
 export class SearchjobspageComponent {
 
   Searchjobspagecomponent(){
-
   }
-
-newTab:String = "+"
 
 
 tabs:tab[] = [
-{tab_name:"search-one",tab_icon:"",tab_title:"search"},
-{tab_name:"search-two",tab_icon:"",tab_title:"+"}
+{tab_name:"search-1",tab_icon:"",tab_title:"search"},
+{tab_name:"search-2",tab_icon:"",tab_title:"+"}
 ]
 
 
-openNewTab(){
-  this.newTab = "Search new job"
+openNewTab(event:Event){
+  var totalTabs = this.tabs.length
+  console.log("open new tab called " + totalTabs)
+  this.tabs = this.tabs.concat({tab_name:"search-"+totalTabs,tab_icon:"",tab_title:"search"})
 
 }
 
